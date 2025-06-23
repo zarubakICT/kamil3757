@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>e-Yard Sale</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --background: #f3f4f6;
+      --card-bg: #fff;
+      --border: #e5e7eb;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --reserved: #f59e0b;
+      --sold: #dc2626;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--background);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 4px solid var(--primary);
+    }
+
+    header h1 {
+      margin: 0 0 0.5rem;
+    }
+
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .toc-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .toc-item:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transform: translateY(-3px);
+    }
+
+    .toc-item img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    .toc-item .info {
+      padding: 0.75rem;
+      text-align: center;
+    }
+
+    .price {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 0.2em 0.5em;
+      font-size: 0.75rem;
+      border-radius: 0.5em;
+      color: #fff;
+      margin-left: 0.25em;
+    }
+
+    .reserved { background: var(--reserved); }
+    .sold { background: var(--sold); }
+
+    .item-section {
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .item-section h2 {
+      font-size: 1.5rem;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .photos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .photos img {
+      width: 100%;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+      object-fit: cover;
+    }
+
+    .photos img:hover {
+        transform: scale(1.4);  /* Zoom in by 40% */
+        z-index: 1;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 1.5rem 1rem;
+      }
+
+      .item-section h2 {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Welcome to Jana and Kamil´s <i>e-Yard Sale!</i></h1>
+  <p>Click on an item below to view more photos and details</p>
+  <p>If you´re interested, <strong>text</strong> <em>310 689 6053</em> to reserve an item.</p>
+  <p>All items are ready for pick-up at S. Centinela Av. & McCune, Los Angeles, CA 90066.</p>
+</header>
+
+<section class="toc">
+  <a href="#item1" class="toc-item">
+    <img src="./pictures/TV01.jpg" alt="Item 1">
+    <div class="info">
+      <div class="price">$140</div>
+    </div>
+  </a>
+  <a href="#item2" class="toc-item">
+    <img src="./pictures/TVstand01.jpg" alt="Item 2">
+    <div class="info">
+      <div class="price">$20</div>     <!--   <div class="price">$40 <span class="status reserved">Reserved</span></div>       -->
+    </div>
+  </a>
+  <a href="#item3" class="toc-item">
+    <img src="./pictures/sofa01.jpg" alt="Item 3">
+    <div class="info">
+      <div class="price">$450</div>
+    </div>
+  </a>
+  <a href="#item4" class="toc-item">
+    <img src="./pictures/single_bed01.jpg" alt="Item 4">
+    <div class="info">
+      <div class="price">$100</div>
+    </div>
+  </a>
+  <a href="#item5" class="toc-item">
+    <img src="./pictures/queen_bed01.jpg" alt="Item 5">
+    <div class="info">
+      <div class="price">$200</div>
+    </div>
+  </a>
+
+  <a href="#item6" class="toc-item">
+    <img src="./pictures/bedside_cabinet01.jpg" alt="Item 6">
+    <div class="info">
+      <div class="price">$15</div>
+    </div>
+  </a>
+  
+  <a href="#item7" class="toc-item">
+    <img src="./pictures/janome01.jpg" alt="Item 7">
+    <div class="info">
+      <div class="price">$120</div>
+    </div>
+  </a>
+  
+  <a href="#item8" class="toc-item">
+    <img src="./pictures/heater01.jpg" alt="Item 8">
+    <div class="info">
+      <div class="price">$30</div>
+    </div>
+  </a>
+
+</section>
+
+<section id="item1" class="item-section">
+  <h2>Samsung LED TV 43´</h2>
+  <p class="description">
+    Samsung, Model UN43TU7000. No scratches, no dead pixels.
+  </p>
+  <div class="photos">
+    <img src="pictures/TV01.jpg" alt="Item 1 photo 1" width="600">
+    <img src="pictures/TV02.jpg" alt="Item 1 photo 2" width="600">
+    <img src="pictures/TV03.jpg" alt="Item 1 photo 3" width="600">
+  </div>
+</section>
+
+<section id="item2" class="item-section">
+  <h2>TV stand (black)</h2>
+  <p class="description">
+    TV stand (black); used. Right image: TV stand with 43´ LED TV (TV sold separately)
+  </p>
+  <div class="photos">
+    <img src="pictures/TVstand01.jpg" alt="Item 2 photo 1" width="600">
+    <img src="pictures/TVstand02.jpg" alt="Item 2 photo 2" width="600">
+  </div>
+</section>
+
+<section id="item3" class="item-section">
+  <h2>Sofa</h2>                       <!-- <span class="status sold">Sold</span>     -->
+  <p class="description">
+    3-piece fabric sofa with chaise, color: beige
+  </p>
+  <div class="photos">
+    <img src="pictures/sofa01.jpg" alt="Item 3 photo 1" width="400">
+    <img src="pictures/sofa02.jpg" alt="Item 3 photo 2" width="400">
+    <img src="pictures/sofa03.jpg" alt="Item 3 photo 3" width="400">
+    <img src="pictures/sofa04.jpg" alt="Item 3 photo 4" width="400">
+    <img src="pictures/sofa05.jpg" alt="Item 3 photo 5" width="400">
+    <img src="pictures/sofa06.jpg" alt="Item 3 photo 6" width="400">
+  </div>
+</section>
+
+<section id="item4" class="item-section">
+  <h2>Single bed with frame </h2>
+  <p class="description">
+    Single bed (IKEA Tarva) with a frame (IKEA Lukoy), bed color: white
+  </p>
+  <div class="photos">
+    <img src="pictures/single_bed01.jpg" alt="Item 4 photo 1" height="400">
+    <img src="pictures/single_bed02.jpg" alt="Item 4 photo 2" width="600">
+    <img src="pictures/single_bed03.jpg" alt="Item 4 photo 3" height="400">
+  </div>
+</section>
+
+<section id="item5" class="item-section">
+  <h2>Queen bed with frame </h2>
+  <p class="description">
+    Queen bed (IKEA Malm) with a frame (IKEA Lukoy), bed color: black
+  </p>
+  <div class="photos">
+    <img src="pictures/queen_bed01.jpg" alt="Item 5 photo 1" height="600">
+  </div>
+</section>
+
+<section id="item6" class="item-section">
+  <h2>Bedside table </h2>
+  <p class="description">
+    Bedside cabinets, 3 pieces, each for $15, take all three for $30
+  </p>
+  <div class="photos">
+    <img src="pictures/bedside_cabinet01.jpg" alt="Item 6 photo 1" height="400">
+    <img src="pictures/bedside_cabinet02.jpg" alt="Item 6 photo 2" height="400">
+    <img src="pictures/bedside_cabinet03.jpg" alt="Item 6 photo 3" height="400">
+    <img src="pictures/bedside_cabinet04.jpg" alt="Item 6 photo 4" height="400">
+  </div>
+</section>
+
+<section id="item7" class="item-section">
+  <h2>JANOME sewing machine  </h2>
+  <p class="description">
+    Janome 2212, sewing machine, model: 306LE, color: white, very good (used for less than 6 hours)
+  </p>
+  <div class="photos">
+    <img src="pictures/janome01.jpg" alt="Item 7 photo 1" width="400">
+    <img src="pictures/janome02.jpg" alt="Item 7 photo 2" width="400">
+  </div>
+</section>
+
+<section id="item8" class="item-section">
+  <h2>PELONA Oil-filled radiator heater </h2>
+  <p class="description">
+    Pelona oil-filled heater, 1500 W; color: black. One for $30, take both for $40
+  </p>
+  <div class="photos">
+    <img src="pictures/heater01.jpg" alt="Item 8 photo 1" height="400">
+    <img src="pictures/heater02.jpg" alt="Item 8 photo 2" width="300">
+    <img src="pictures/heater03.jpg" alt="Item 8 photo 3" height="400">
+  </div>
+</section>
+
+</body>
+</html>
